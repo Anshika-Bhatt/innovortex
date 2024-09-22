@@ -10,7 +10,7 @@ body {
   vertical-align: middle;
   line-height: 1px;
   font-size: 35px;
-  color: #838282;
+  color: #838283;
 }
 
 .grid-container {
@@ -282,11 +282,11 @@ body{
 
 .links ul li:hover,
 .links ul li.active{
-	color: #4abd3e;
+	color: #e228e2;
 }
 
 .view_main{
-	background: rgb(212, 222, 135);
+	background: rgb(222, 135, 222);
 	border-radius: 3px;
 	padding: 15px;
 }
@@ -386,11 +386,11 @@ body{
 
 
 .remove-btn:hover {
-  background-color: #c0392b;
+  background-color: #c02b2b;
 }
 
 .remove-btn {
-  background-color: #6aa43de2;
+  background-color: #a636bde2;
   color: #f0f0f0;
   border: none;
   border-radius: 3px;
@@ -427,9 +427,3 @@ body{
 .nav-right a:hover {
   color: #da6060;
 }
-
-
-
-
-
-
