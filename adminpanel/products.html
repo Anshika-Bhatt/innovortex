@@ -6,6 +6,95 @@
     <title>Products Details</title>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .navbar {
+            background: #82148c;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wrapper {
+            padding: 20px;
+        }
+
+        .view_wrap {
+            margin-bottom: 20px;
+        }
+
+        .view_item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .vi_left img {
+            max-width: 50px;
+            margin-right: 10px;
+        }
+
+        .vi_right {
+            padding-left: 10px; /* Added left padding */
+        }
+
+        .remove-btn {
+            cursor: pointer;
+        }
+
+        .add-product {
+            background: #e1bee7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        .add-product h3 {
+            margin: 0 0 10px;
+            color: #4a148c;
+        }
+
+        .add-product input,
+        .add-product textarea {
+            width: calc(100% - 22px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #4a148c;
+            border-radius: 5px;
+        }
+
+        .add-product input[type="file"] {
+            padding: 5px;
+        }
+
+        .add-product button {
+            background: #4a148c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-product button:hover {
+            background: #6a1b9a;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,211 +103,125 @@
             <h2>Products Details</h2>
         </div>
         <div class="nav-right">
-            <a href="index.html">
+            <a href="index.html" style="color: white;">
                 <i class="fas fa-home"></i>
             </a>
         </div>
     </nav>
-    
 
     <div class="wrapper">
-        
         <div class="view_main">
-            <div class="view_wrap list-view" style="display: block;">
-
-
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="pinkkurti.jpg" alt="pink_kurti">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Pink cotton kurti women Ethnic wear</p>
-                        <p class="content">Women ethnic/traditonal wear, light weight, daily wear
-                            comfortable cotton fabric , available in 5 colors , unstitched
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-
-
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="lehenga.jpeg" alt="lehenga">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Lavender vibrant Lehenga for girls</p>
-                        <p class="content">Satin fabric party wear lehenga, 7 different colors available
-                            semi-stictched with matching net dupatta
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="lipstick.jpeg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Beauty Non Transfer Matte Crayon Lipstick</p>
-                        <p class="content">The lightweight, creamy formula of the lipstick glides on effortlessly and gives an intense color payoff in a single stroke.
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="bag.jpeg" alt="purse">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Ladies purse/carrybag</p>
-                        <p class="content">lightweight compact carrybag for parties, outgoing
-                            or picnics , fashion wear
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="boots.jpeg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Women Block-Heeled Chelsea Boots</p>
-                        <p class="content">A pair of gold toned solid block-heeled chelsea boots, has mid-top ankle and slip-on fastening 
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="image-02.jpg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Purple Semi Silk Hand Embroidered Cutdana Sweetheart Opium Jumpsuit</p>
-                        <p class="content">Purple padded jumpsuit with cutdana and sequins hand embroidered flowers. Comes with deatchable shoulder cap
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="women-04.jpg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Blue Cotton Silk Regular Fit Kurta Set</p>
-                        <p class="content">Kurta & Bottomwear
-                            Dry clean
-                            Cotton Silk .Perfect for daily wear,workplaces kitty parties and more.
-                        </p>
-                    </div>
-                    
-                    <div class="remove-btn">__</div>
-                </div>
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="boots2.jpeg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Adella Croco Embossed Cuoio Leather Long Boots</p>
-                        <p class="content"> Perfect for evening wear, a must-have for leather lovers.</p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="women-05.jpg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Blue Cotton Calf Length Midi Dress</p>
-                        <p class="content">This chic dress boasts a sleek Chinese Collar and a relaxed fit that exudes sophistication.
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="women-06.jpg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Women Printed Shirt Dress with Tie-Up Belt</p>
-                        <p class="content">Package contains: 1 dress with tie-up belt
-                            Dry clean
-                            Rayon blend
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="hairclip.jpg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Sanas Hair Accessories 1 Pc Hair Clips For Women Stone Accessories</p>
-                        <p class="content">two pieces stictched indo western wear in variety of sizes with 4 exclusive
-                            colors
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="hairclaw.jpg" alt="img">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">White Collar Polyester Large Hair Claw Embellished Women</p>
-                        <p class="content">two pieces stictched indo western wear in variety of sizes with 4 exclusive
-                            colors
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="ear.jpg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Cross dangle hooped earrings 7 sets</p>
-                        <p class="content">Sparking love helix hoops is a dainty and low-key piece you'll never want to take off. Easy and comfortable to wear it all day long. 
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-                <div class="view_item">
-                    <div class="vi_left">
-                        <img src="totebag.jpeg" alt="indowestern">
-                    </div>
-                    <div class="vi_right">
-                        <p class="title">Canvas Printed Shoulder Tote Bag</p>
-                        <p class="content"> Crafted from high qaulity floral pattern jacquard material for lasting use, this tote handbag comes full polyester lining making it water resistant.
-                        </p>
-                    </div>
-                    <div class="remove-btn">__</div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
+            <div class="view_wrap list-view" id="productList">
+                <!-- Existing product items will be populated here -->
             </div>
         </div>
-        <div>
+
+        <div class="add-product">
+            <h3>Add a New Product</h3>
+            <input type="text" id="productName" placeholder="Product Name" required>
+            <input type="file" id="productImage" accept="image/*" required>
+            <textarea id="productDescription" placeholder="Description" required></textarea>
+            <button id="addProduct">Add Product</button>
         </div>
     </div>
-    </div>
-    </div>
 
-    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('addProduct').addEventListener('click', function() {
+            const name = document.getElementById('productName').value;
+            const imageInput = document.getElementById('productImage');
+            const description = document.getElementById('productDescription').value;
 
+            if (name && imageInput.files.length > 0 && description) {
+                const file = imageInput.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const li = document.createElement('div');
+                    li.classList.add('view_item');
+
+                    li.innerHTML = `
+                        <div class="vi_left">
+                            <img src="${e.target.result}" alt="${name}">
+                        </div>
+                        <div class="vi_right">
+                            <p class="title">${name}</p>
+                            <p class="content">${description}</p>
+                        </div>
+                        <div class="remove-btn">__</div>
+                    `;
+
+                    document.getElementById('productList').appendChild(li);
+
+                    // Clear input fields
+                    document.getElementById('productName').value = '';
+                    imageInput.value = '';
+                    document.getElementById('productDescription').value = '';
+
+                    // Add event listener to remove button
+                    li.querySelector('.remove-btn').addEventListener('click', function() {
+                        li.remove();
+                    });
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Existing products initialization
+        const existingProducts = [
+            {
+                name: "Pink cotton kurti women Ethnic wear",
+                image: "pinkkurti.jpg",
+                description: "Women ethnic/traditional wear, light weight, daily wear comfortable cotton fabric, available in 5 colors, unstitched"
+            },
+            {
+                name: "Lavender vibrant Lehenga for girls",
+                image: "lehenga.jpeg",
+                description: "Satin fabric party wear lehenga, 7 different colors available semi-stitched with matching net dupatta"
+            },
+            {
+                name: "Beauty Non Transfer Matte Crayon Lipstick",
+                image: "lipstick.jpeg",
+                description: "The lightweight, creamy formula of the lipstick glides on effortlessly and gives an intense color payoff in a single stroke."
+            },
+            {
+                name: "Ladies purse/carrybag",
+                image: "bag.jpeg",
+                description: "Lightweight compact carrybag for parties, outings, or picnics, fashion wear."
+            },
+            {
+                name: "Women Block-Heeled Chelsea Boots",
+                image: "boots.jpeg",
+                description: "A pair of gold toned solid block-heeled chelsea boots, has mid-top ankle and slip-on fastening."
+            },
+            // Add more existing products as needed
+        ];
+
+        existingProducts.forEach(product => {
+            const li = document.createElement('div');
+            li.classList.add('view_item');
+
+            li.innerHTML = `
+                <div class="vi_left">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="vi_right">
+                    <p class="title">${product.name}</p>
+                    <p class="content">${product.description}</p>
+                </div>
+                <div class="remove-btn">__</div>
+            `;
+
+            document.getElementById('productList').appendChild(li);
+
+            // Add event listener to remove button
+            li.querySelector('.remove-btn').addEventListener('click', function() {
+                li.remove();
+            });
+        });
+    </script>
 </body>
 
 </html>
