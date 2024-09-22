@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-image: url('bg_img.png'); /* Replace with your background image URL */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .admin-btn {
+            background-color: #ae72cf; /* Green */
+            color: white;
+        }
+        .admin-btn:hover {
+            background-color: #be5ff1;
+        }
+        .user-btn {
+            background-color: #cf70bf; /* Blue */
+            color: white;
+        }
+        .user-btn:hover {
+            background-color: #e443c9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sign Up</h1>
+    <button class="admin-btn" onclick="window.location.href='admin_signup.html'">Sign Up as Admin</button>
+    <button class="user-btn" onclick="window.location.href='user_signup.html'">Sign Up as User</button>
+</div>
+
+</body>
+</html>
