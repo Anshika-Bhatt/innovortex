@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/9bf5dba3-55b5-4599-b490-1a53fdbd0164/webchat/config.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,7 +20,7 @@
                 <a href="loginpage.html">Login/Register</a>
                 <a href="#">Wishlist</a>
                 <a href="#">Cart</a>
-                <a href="#" class="bot">🤖</a> <!-- Placeholder for bot -->
+                <a href="#" class="bot" onclick="openBot()">🤖</a> <!-- Placeholder for bot -->
             </div>
         </nav>
         <nav class="bottom-navbar">
@@ -282,7 +284,12 @@
     
        
     
-
+    <script>
+    function openBot() {
+        // Assuming that the Botpress webchat API is available globally
+        window.botpressWebChat.sendEvent({ type: 'open' });
+    }
+    </script>
     <script>
         function connectToLocalServer() {
             window.open('http://192.168.1.7:8503', '_blank');
