@@ -5,22 +5,10 @@
     <title>Login/Register</title>
     <!-- Cool Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet" />
     <!-- Our stylesheet -->
     <link rel="stylesheet" type="text/css" href="login.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -37,9 +25,8 @@
             <input type="text" id="full_name" placeholder="Full name" />
             <input type="email" id="email" placeholder="Email" />
             <input type="password" id="password" placeholder="New Password" />
-
             <input type="text" id="age" placeholder="Age" />
-            <input type="text" id="gender" placeholder="Gender" />
+            <input type="text" id="occupation" placeholder="Occupation" />
 
             <div id="button_container">
               <button onclick="login()">Login</button>
@@ -49,40 +36,49 @@
         </div>
       </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script>
+      ScrollReveal({
+        reset: true,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+      ScrollReveal().reveal("#content_container", {
+        delay: 200,
+        origin: "bottom",
+      });
+
+      function validateFields() {
+        const fullName = document.getElementById("full_name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const age = document.getElementById("age").value;
+        const occupation = document.getElementById("occupation").value;
+
+        return fullName && email && password && age && occupation;
+      }
+
+      function login() {
+        if (validateFields()) {
+          window.location.href = 'adminpanel/index.html';
+        } else {
+          alert("Please fill in all fields.");
+        }
+      }
+
+      function register() {
+        if (validateFields()) {
+          window.location.href = 'adminpanel/index.html';
+        } else {
+          alert("Please fill in all fields.");
+        }
+      }
+    </script>
+    <script src="login.js"></script>
   </body>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-
-
-
-<!-- 
-<script src=""https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js""></script>
-    <script src=""https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js""></script>
-    <script src=""https://www.gstatic.com/firebasejs/10.12.1/firebase-database.js""></script>  -->
-
-
-  <script>
-    ScrollReveal({
-      reset: true,
-      distance: "60px",
-      duration: 2500,
-      delay: 400,
-    });
-    ScrollReveal().reveal("#content_container", {
-      delay: 200,
-      origin: "bottom",
-    });
-  </script>
-  <script>
-    function login() {
-        window.location.href = 'adminpanel/index.html';
-    }
-
-    function register() {
-        window.location.href = 'adminpanel/index.html';
-    }
-  </script>
-  <script src="login.js"></script>
 </html>
