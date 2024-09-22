@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="top-navbar">
+            <div class="logo">V B C</div>
+            <div class="search-container">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+            <div class="user-options">
+                <a href="#">Login/Register</a>
+                <a href="#">Wishlist</a>
+                <a href="#">Cart</a>
+                <a href="#" class="bot">🤖</a> <!-- Placeholder for bot -->
+            </div>
+        </nav>
+        <nav class="bottom-navbar">
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Products</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Skincare</a></li>
+                        <li><a href="#">Haircare</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="image/img1.png">
+                <div class="content">
+                    <div class="author">VBC</div>
+                    <div class="title"> Best Cosmetics for Every Skin</div>
+                    <div class="topic">MAKEUP</div>
+                    <div class="des" style="font-weight: 500; max-width: 30vw; word-wrap: break-word;">
+                        <!-- lorem 50 -->
+                        Enhance Your Beauty with Our Premium Cosmetics Collection!
+                        Discover a range of luxurious beauty products crafted to elevate your look and boost your confidence. From vibrant lip shades to flawless foundations, we've got everything you need to create your perfect style.
+                    </div>
+                    <div class="buttons">
+                        <button>SHOP NOW</button>
+                        <button>BRANDS DEALS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.png">
+                <div class="content">
+                    <div class="author">VBC</div>
+                    <div class="title">Cutting-Edge Styles !</div>
+                    <div class="topic">FASHION DEALS</div>
+                    <div class="des"style="font-weight: 500; max-width: 30vw; word-wrap: break-word;">
+                        Explore the latest in fashion with our curated collection of must-have outfits and accessories. Whether you're looking for casual wear or a statement piece for a special occasion, find the perfect ensemble to express your unique style.
+                    </div>
+                    <div class="buttons">
+                        <button>SHOP NOW</button>
+                        <button>BRAND DEALS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.png">
+                <div class="content">
+                    <div class="author">VBC</div>
+                    <div class="title">Design a Cozy Haven</div>
+                    <div class="topic">HOME ESSENTIALS</div>
+                    <div class="des"style="font-weight: 500; max-width: 30vw; word-wrap: break-word;">
+                        Reimagine your home with our exquisite collection of décor items. From sophisticated art pieces to cozy accents, discover everything you need to create a warm and inviting atmosphere that reflects your personal taste.
+                    </div>
+                    <div class="buttons">
+                        <button>SHOP NOW</button>
+                        <button>BRAND DEALS</button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.png">
+                <div class="content">
+                    <div class="author">VBC</div>
+                    <div class="title">Revolutionize Your Home</div>
+                    <div class="topic">Home Appliances</div>
+                    <div class="des" style="font-weight: 500; max-width: 30vw; word-wrap: break-word;">
+                        Simplify Your Life with Our High-Quality Home Appliances! Upgrade your home with reliable appliances designed for convenience and efficiency. From innovative kitchen gadgets to smart home solutions, our selection helps you tackle everyday tasks with ease and comfort.
+                    </div>
+                    
+                    <div class="buttons">
+                        <button>SHOP NOW</button>
+                        <button>BRAND DEALS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="image/img5.png">
+                <div class="content">
+                    <div class="title">
+                        Cosmetics
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img6.png">
+                <div class="content">
+                    <div class="title">
+                        Clothing
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img7.png">
+                <div class="content">
+                    <div class="title">
+                        Home Decor
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img8.png">
+                <div class="content">
+                    <div class="title">
+                        Home Appliances
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+    <section class="features-section">
+        <h2>Experience the Best of Beauty with Our New Features!</h2>
+        <div class="feature-boxes">
+            <div class="feature-box">
+                <h3>Try Before You Buy Makeup</h3>
+                <p>Find your perfect shade with our Try Before You Buy feature! Explore our collection and test your favorite products without any commitment.</p>
+                <img src="image/img25.png" alt="Try Before You Buy Makeup" />
+                <button class="cta-button">Try It Now</button>
+            </div>
+            <div class="feature-box">
+                <h3>Smart Recommendation Feature</h3>
+                <p>Let our AI-powered recommendations guide you to the perfect products tailored just for you based on your preferences!</p>
+                <img src="image/img26.png" alt="Smart Recommendation" />
+                <button class="cta-button">Get Recommendations</button>
+            </div>
+        </div>
+    </section>
+    
+    <div class="promo-carousel">
+        <div class="promo-item">
+            <img src="image/img9.png" alt="Healthy Hair Habits">
+            <div class="promo-content">
+                <h3>Healthy Hair Habits</h3>
+                <p>Buy 2 Get 5% Off<br>Buy 3 & Get 10% Off</p>
+                <button class="promo-button">Shop Now</button>
+            </div>
+        </div>
+        <div class="promo-item">
+            <img src="image/img10.png" alt="Buy 2 Get 1 Free">
+            <div class="promo-content">
+                <h3>Buy 2 Get 1 Free</h3>
+                <p>Today's Stars Korean Cult Faves</p>
+                <button class="promo-button">Shop Now</button>
+            </div>
+        </div>
+        <div class="promo-item">
+            <img src="image/img11.png" alt="Special Offers">
+            <div class="promo-content">
+                <h3>Special Offers on All Orders</h3>
+                <button class="promo-button">Shop Now</button>
+            </div>
+        </div>
+        <!-- Add navigation arrows if needed -->
+    </div>
+    <div class="bestsellers-section" style="text-align: center; padding: 20px; background-color: #f5f0f0; border-radius: 15px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); margin: 20px auto; width: fit-content;">
+        <h2 style="font-size: 32px; font-weight: 600; color: #ae72cf; margin-bottom: 10px;">Best Sellers</h2>
+        <p style="font-size: 24px; font-weight: bold; color: #000;">Discover the top-rated products loved by our customers!</p>
+    </div>
+    
+    <div class="container">
+        <span class="slider" id="slider1"></span>
+        <span class="slider" id="slider2"></span>
+        <span class="slider" id="slider3"></span>
+        <span class="slider" id="slider4"></span>
+        <span class="slider" id="slider5"></span>
+        <span class="slider" id="slider6"></span>
+        <span class="slider" id="slider7"></span>
+
+        <div class="imgContainer">
+
+           <div class="slide_div" id="slide_1">
+            <img src="image/img13.png" alt="" class="img" id="img1">
+            <a href="#slider1" class="button" id="button1"></a>
+           </div>
+           <div class="slide_div" id="slide_2">
+            <img src="image/img14.png" alt="" class="img" id="img2">
+            <a href="#slider2" class="button" id="button2"></a>
+           </div>
+           <div class="slide_div" id="slide_3">
+            <img src="image/img15.png" alt="" class="img" id="img3">
+            <a href="#slider3" class="button" id="button3"></a>
+           </div>
+           <div class="slide_div" id="slide_4">
+            <img src="image/img16.png" alt="" class="img" id="img4">
+            <a href="#slider4" class="button" id="button4"></a>
+           </div>
+           <div class="slide_div" id="slide_5">
+            <img src="image/img17.png" alt="" class="img" id="img5">
+            <a href="#slider5" class="button" id="button5"></a>
+           </div>
+           <div class="slide_div" id="slide_6">
+            <img src="image/img18.png" alt="" class="img" id="img6">
+            <a href="#slider6" class="button" id="button6"></a>
+           </div>
+           <div class="slide_div" id="slide_7">
+            <img src="image/img19.png" alt="" class="img" id="img7">
+            <a href="#slider7" class="button" id="button7"></a>
+           </div>
+
+        </div>
+        
+    </div>
+    <div class="banner">
+        <img src="./image/img12.png" alt="Banner Image" class="banner-image">
+    </div>
+    
+    <section class="offers">
+        <div class="offer-box">
+            <img src="image/img20.png" alt="Offer 1">
+            <div class="offer-title">Up To 40% Off</div>
+            <div class="offer-subtitle">Extra 10% Off On ₹699</div>
+        </div>
+        <div class="offer-box">
+            <img src="image/img21.png" alt="Offer 2">
+            <div class="offer-title">Up To 25% Off</div>
+            <div class="offer-subtitle">On Bestsellers</div>
+        </div>
+        <div class="offer-box">
+            <img src="image/img22.png" alt="Offer 3">
+            <div class="offer-title">Up To 45% Off</div>
+            <div class="offer-subtitle">On Entire Range</div>
+        </div>
+        <div class="offer-box">
+            <img src="image/img23.png" alt="Offer 4">
+            <div class="offer-title">Up To 40% Off</div>
+            <div class="offer-subtitle">Extra 10% Off On ₹599*</div>
+        </div>
+        <div class="offer-box">
+            <img src="image/img24.png" alt="Offer 5">
+            <div class="offer-title">Flat 40% Off</div>
+            <div class="offer-subtitle">On Bestsellers</div>
+        </div>
+    </section>
+    
+    
+       
+    
+
+
+    <script src="app.js"></script>
+</body>
+</html>

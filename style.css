@@ -1,0 +1,817 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #f5f0f0;
+    color: #000; /* Changed to a readable color */
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Top Navbar */
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px; /* Increased padding for more space */
+    border-bottom: 2px solid #ae72cf;
+    width: 100%;
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick to the top */
+    left: 0; /* Align to the left */
+    right:0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px; /* Center search bar */
+  
+}
+
+.search-container input {
+    padding: 8px;
+    border: 1px solid #bd9292;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 100%;
+    max-width: 250px; /* Set a reasonable max-width */
+}
+
+.search-container button {
+    padding: 8px 12px; /* Style search button */
+    background-color: #ae72cf; /* Button color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #bd9292; /* Change on hover */
+}
+
+.user-options {
+    display: flex;
+    gap: 15px;
+}
+
+.user-options a {
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold; /* Makes text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    transition: background-color 0.3s;
+}
+
+.user-options a:hover {
+    background-color: #ae72cf;
+    color: white;
+}
+
+.user-options .login-register {
+    background-color: #bd9292;
+    color: white;
+    padding: 10px 20px;
+}
+
+.user-options .login-register:hover {
+    background-color: #ae72cf;
+}
+
+/* Bottom Navbar */
+.bottom-navbar {
+    background-color: #bd9292; /* Contrast color */
+    width: 100%; /* Full width */
+    position: sticky; /* Ensure stacking context */
+    margin-top: 10px; /* Adjust margin if necessary */
+    z-index: 999; /* Stack below top navbar */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    color: #fff;
+    font-weight: bold; /* Makes text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    font-size:small;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: #ae72cf;
+}
+
+.dropdown {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-list li:hover .dropdown {
+    display: block;
+}
+
+.dropdown a {
+    color: #000;
+    padding: 10px 15px;
+}
+
+.dropdown a:hover {
+    background-color: #ae72cf;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .top-navbar {
+        flex-direction: column; /* Stack items vertically */
+    }
+}
+
+
+/* carousel */
+.carousel {
+    height: 100vh;
+    margin-top: 10px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .top-navbar {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .search-container {
+        width: 100%; /* Full-width search bar */
+        margin: 5px 0; /* Margin adjustments */
+    }
+
+    .nav-list {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .nav-list li {
+        margin: 5px 0; /* Add space between items */
+    }
+}
+
+/* carousel */
+.carousel{
+    height: 100vh;
+    margin-top: 10px;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+.carousel .list .item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #000000;
+    text-shadow: 0 5px 10px #0004;
+}
+.carousel .list .item .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.carousel .list .item .topic{
+    color: #ae72cf;
+}
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 50px;
+}
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #bd9292;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #000000;
+    color: #000000;
+}
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 220px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .item .content{
+    color: #000000;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item .content .title{
+    font-weight: 500;
+}
+.thumbnail .item .content .description{
+    font-weight: 300;
+}
+/* arrows */
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    color: #000000;
+    font-family: monospace;
+    font-weight: bold;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #000000;
+    color: #d791cc;
+}
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons
+{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .content .title{
+    animation-delay: 1.2s!important;
+}
+.carousel .list .item:nth-child(1) .content .topic{
+    animation-delay: 1.4s!important;
+}
+.carousel .list .item:nth-child(1) .content .des{
+    animation-delay: 1.6s!important;
+}
+.carousel .list .item:nth-child(1) .content .buttons{
+    animation-delay: 1.8s!important;
+}
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list .item img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.carousel .time{
+    position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #000000;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    from{ width: 100%}
+    to{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+@keyframes outFrame{
+    to{
+        width: 150px;
+        height: 220px;
+        bottom: 50px;
+        left: 50%;
+        border-radius: 20px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1){
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons
+{
+    animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+    .carousel .list .item .content .title{
+        font-size: 30px;
+    }
+}
+
+.promo-carousel {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #f5f0f0;
+}
+
+.promo-item {
+    margin: 0 25px; /* More space between items */
+    position: relative;
+    width: 350px; /* Increased width */
+    height: 250px; /* Increased height */
+    color: white; /* Default text color */
+    border-radius: 10px; /* Rounded corners for the images */
+    overflow: hidden; /* Ensures no overflow of content */
+}
+
+.promo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 10px; /* Rounded corners for the images */
+}
+
+.promo-content {
+    position: absolute;
+    bottom: 20px; /* Position from the bottom */
+    left: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+    text-align: center;
+}
+
+h3 {
+    font-size: 22px; /* Slightly larger font size */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for depth */
+    margin: 0 0 5px 0; /* Spacing below the title */
+}
+
+.promo-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff9e6; /* Light cream color for visibility */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px; /* Space above the button */
+}
+
+.promo-button {
+    background-color: #ae72cf;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Button depth */
+}
+
+.promo-button:hover {
+    background-color: #bd9292;
+}
+
+/* Adjusting the text overlay for better image visibility */
+.promo-content {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0) 100%);
+    border: 1px solid #ffffff33; /* Subtle border for definition */
+    backdrop-filter: blur(5px); /* Blur effect for background elements */
+}
+.container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imgContainer {
+    width: 100%;
+    height: 600px;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.slide_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px;
+}
+
+img {
+    position: relative;
+    height: 370px;
+    width: 240px;
+    transition: 0.7s;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+.button {
+    position: absolute;
+    width: 240px;
+    height: 370px;
+    transition: 0.7s;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel images saturation */
+.carousel-img {
+    filter: saturate(10%);
+}
+
+#slider1:target ~ .imggContainer #img1,
+#slider1:target ~ .imggContainer #button1 {
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider2:target ~ .imggContainer #img2,
+#slider2:target ~ .imggContainer #button2 {
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider3:target ~ .imggContainer #img3,
+#slider3:target ~ .imggContainer #button3 {
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider4:target ~ .imggContainer #img4,
+#slider4:target ~ .imggContainer #button4 {
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider5:target ~ .imggContainer #img5,
+#slider5:target ~ .imggContainer #button5 {
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider6:target ~ .imggContainer #img6,
+#slider6:target ~ .imggContainer #button6 {
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider7:target ~ .imggContainer #img7,
+#slider7:target ~ .imggContainer #button7 {
+    width: 390px;
+    height: 600px;
+    background-color: transparent;
+    filter: saturate(100%);
+}
+
+#slider1:target ~ .imgContainer {
+    left: 60%;
+}
+
+#slider2:target ~ .imgContainer {
+    left: 40%;
+}
+
+#slider3:target ~ .imgContainer {
+    left: 20%;
+}
+
+#slider4:target ~ .imgContainer {
+    left: 0%;
+}
+
+#slider5:target ~ .imgContainer {
+    left: -20%;
+}
+
+#slider6:target ~ .imgContainer {
+    left: -40%;
+}
+
+#slider7:target ~ .imgContainer {
+    left: -60%;
+}
+
+.img {
+    height: 370px;
+}
+
+.offers {
+    display: flex;
+    justify-content: space-between; /* Equal space between boxes */
+    margin: 20px; /* Add some margin around the section */
+}
+
+.offer-box {
+    text-align: center; /* Center the text */
+    flex: 1; /* Allow boxes to grow equally */
+    margin: 0 10px; /* Space between boxes */
+}
+
+.offer-box img {
+    width: 100%; /* Make images responsive */
+    height: 150px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintain aspect ratio, fill the box */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.offer-title {
+    font-weight: bold; /* Bold text for titles */
+    font-size: 18px; /* Font size for titles */
+    margin: 10px 0; /* Space around titles */
+}
+
+.offer-subtitle {
+    font-size: 14px; /* Font size for subtitles */
+    color: #777; /* Subtitle color */
+}
+.banner {
+    display: flex;
+    justify-content: center; /* Center the banner */
+    margin: 20px auto; /* Add vertical spacing */
+    width: 90%; /* Set width slightly smaller than the screen */
+    max-width: 1200px; /* Optional: Set a max-width for larger screens */
+    overflow: hidden; /* Hide overflow to maintain structure */
+}
+
+.banner-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the banner area */
+}
+/* Features Section */
+.features-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff; /* Background color for the section */
+}
+
+.features-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.feature-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    max-width: 1200px; /* Maximum width for the section */
+    margin: 0 auto; /* Center the section */
+}
+
+.feature-box {
+    flex: 1; /* Equal width */
+    min-width: 250px; /* Minimum width for responsiveness */
+    margin: 10px; /* Spacing between boxes */
+    padding: 20px;
+    border: 1px solid #bd9292; /* Border around boxes */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background for boxes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.feature-box h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Image Styling */
+.feature-box img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Limit height for uniformity */
+    object-fit: cover; /* Cover the box without distortion */
+    border-radius: 5px; /* Rounded corners for images */
+}
+
+/* Call to Action Button */
+.cta-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #ae72cf; /* Highlight color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #bd9292; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .feature-boxes {
+        flex-direction: column; /* Stack boxes vertically */
+    }
+
+    .feature-box {
+        margin: 10px 0; /* Spacing for stacked boxes */
+    }
+}
+
