@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Try-On</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils"></script>
+    <style>
+        body {
+            text-align: center;
+            background-image: url(bg_img.png);
+            background-size: cover; 
+            background-position: center;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            color: white; /* Make text white for better visibility */
+        }
+        h2 {
+            color: #ae72cf;
+            font-weight: 600;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        canvas {
+            border: 2px solid #ae72cf; /* Optional: Add border for visibility */
+            margin-right: 20px; /* Space between canvas and color circles */
+        }
+        #closeButton {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #f83434; /* Red color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #closeButton:hover {
+            background-color: #ff0000; /* Darker red on hover */
+        }
+        .lipstick-options {
+            display: flex;
+            flex-direction: column; /* Stack colors vertically */
+            align-items: center; /* Center align colors */
+        }
+        .color-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px;
+            cursor: pointer;
+            border: 2px solid white; /* White border for visibility */
+        }
+    </style>
+</head>
+<body>
+    <h2>Try Virtual Makeup</h2>
+    <div id="container">
+        <canvas id="outputCanvas" width="640" height="480"></canvas>
+        <div class="lipstick-options">
+            <div class="color-circle" style="background-color: #b30d0d;" onclick="selectLipColor('#b30d0d')"></div>
+            <div class="color-circle" style="background-color: #ff40a0;" onclick="selectLipColor('#ff40a0')"></div>
+            <div class="color-circle" style="background-color: #ff6450;" onclick="selectLipColor('#ff6450')"></div>
+            <div class="color-circle" style="background-color: #ff7044;" onclick="selectLipColor('#ff7044')"></div>
+            <div class="color-circle" style="background-color: #fc3456;" onclick="selectLipColor('#fc3456')"></div>
+        </div>
+    </div>
+
+    <button id="closeButton" onclick="closeWindow()">Close</button>
+
+    <script>
+        let selectedLipColor = '#ff0000'; // Default lip color
+        let drawLipstick = false; // Flag to control when to draw lipstick
+
+        async function startWebcam() {
+            const canvasElement = document.getElementById('outputCanvas');
+            const canvasCtx = canvasElement.getContext('2d');
+            const video = document.createElement('video');
+            video.autoplay = true; 
+            video.playsinline = true; 
+            
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+
+            const faceMesh = new FaceMesh({
+                locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`,
+            });
+
+            faceMesh.setOptions({
+                maxNumFaces: 1,
+                refineLandmarks: true,
+                minDetectionConfidence: 0.5,
+                minTrackingConfidence: 0.5,
+            });
+
+            faceMesh.onResults(results => {
+                canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+                canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+
+                const landmarks = results.multiFaceLandmarks[0];
+                if (landmarks && drawLipstick) {
+                    applyLipstick(landmarks);
+                }
+            });
+
+            const sendFrame = async () => {
+                await faceMesh.send({ image: video });
+                requestAnimationFrame(sendFrame);
+            };
+
+            video.addEventListener('loadeddata', sendFrame);
+            video.play(); 
+        }
+
+        startWebcam();
+
+        setTimeout(() => {
+            drawLipstick = true; 
+        }, 2000);
+
+        function applyLipstick(landmarks) {
+            const upperLipTop = [61, 185, 40, 39, 37, 0, 267, 269, 270, 409, 291];
+            const upperLipBottom = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375];
+            const lowerLipTop = [146, 91, 181, 84, 17, 314, 405, 321, 375];
+            const lowerLipBottom = [146, 91, 181, 84, 17, 314, 405, 321, 308];
+
+            drawLip(upperLipTop, upperLipBottom, landmarks, 'upper');
+            drawLip(lowerLipTop, lowerLipBottom, landmarks, 'lower');
+        }
+
+        function drawLip(outerLip, innerLip, landmarks, lipPart) {
+            const canvasCtx = document.getElementById('outputCanvas').getContext('2d');
+            canvasCtx.beginPath();
+            
+            outerLip.forEach((index, i) => {
+                const point = landmarks[index];
+                const x = point.x * canvasCtx.canvas.width;
+                const y = point.y * canvasCtx.canvas.height;
+                if (i === 0) {
+                    canvasCtx.moveTo(x, y);
+                } else {
+                    canvasCtx.lineTo(x, y);
+                }
+            });
+
+            innerLip.reverse().forEach((index, i) => {
+                const point = landmarks[index];
+                const x = point.x * canvasCtx.canvas.width;
+                const y = point.y * canvasCtx.canvas.height;
+                if (lipPart === 'lower' && i === 0) {
+                    canvasCtx.moveTo(x, y);
+                } else {
+                    canvasCtx.lineTo(x, y);
+                }
+            });
+
+            canvasCtx.closePath();
+            canvasCtx.fillStyle = selectedLipColor + 'AA';  // Add transparency
+            canvasCtx.fill();
+        }
+
+        function selectLipColor(color) {
+            selectedLipColor = color; // Update selected lip color
+        }
+
+        function closeWindow() {
+            window.close();
+        }
+    </script>
+</body>
+</html>
