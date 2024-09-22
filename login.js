@@ -19,7 +19,7 @@ const firebaseConfig = {
     password = document.getElementById("password").value;
     full_name = document.getElementById("full_name").value;
     age = document.getElementById("age").value;
-    occupation = document.getElementById("occupation").value;
+    gender = document.getElementById("gender").value;
   
     if (validate_email(email) == false || validate_password(password) == false) {
       alert("Email or Password is incorrect!");
@@ -28,7 +28,7 @@ const firebaseConfig = {
     if (
       validate_field(full_name) == false ||
       validate_field(age) == false ||
-      validate_field(occupation) == false
+      validate_field(gender) == false
     ) {
       alert("One or More Extra Fields is incorrect!");
       return;
@@ -45,7 +45,7 @@ const firebaseConfig = {
           email: email,
           full_name: full_name,
           age: age,
-          occupation: occupation,
+          gender: gender,
           last_login: Date.now(),
         };
   
