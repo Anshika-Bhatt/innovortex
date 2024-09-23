@@ -891,4 +891,60 @@ img {
         margin: 10px 0; /* Spacing for stacked boxes */
     }
 }
+.product-grid-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.product-card-item {
+    width: 30%; /* Adjust based on container width */
+    margin: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-card-item h3 {
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-card-item p {
+    padding: 0 10px;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.add-to-cart-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ae72cf; /* Matching button color from the navbar */
+    color: white;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #bd9292; /* Darker shade on hover */
+}
 
