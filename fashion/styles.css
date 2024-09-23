@@ -1,0 +1,464 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    padding-left: 20px; /* Keep padding for body */
+    padding-right: 40px; /* Increased padding on the right */
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    padding: 0; /* Remove padding from banner */
+}
+
+.banner-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+h2 {
+    color: #000;
+    margin-top: 20px;
+}
+
+.content {
+    padding: 0 20px; /* Ensure inner padding */
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Add spacing between cards */
+}
+
+.brands-row {
+    justify-content: flex-start; /* Align brands in one row */
+}
+
+.categories-row {
+    margin-bottom: 20px; /* Add spacing between category rows */
+}
+
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    width: calc(20% - 15px); /* Adjust width for categories */
+}
+
+.brand-card {
+    position: relative;
+    width: calc(20% - 15px); /* Adjust width for brands */
+}
+
+.brand-card h3 {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s ease;
+}
+
+.brand-card:hover h3 {
+    bottom: 10px;
+}
+
+.circle {
+    width: 100px; /* Fixed width for the circle */
+    height: 100px; /* Fixed height for the circle */
+    border-radius: 50%; /* Circular image */
+    overflow: hidden; /* Hide overflow */
+    margin: 0 auto; /* Center align */
+}
+
+.circle img {
+    width: 100%; /* Cover the circle */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.indian-wear .cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.indian-wear .card {
+    width: calc(20% - 15px); /* Adjust width for Indian wear */
+}
+
+.indian-wear .card img {
+    width: 100%;
+    height: 250px; /* Increased height for better display */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.most-purchased .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.most-purchased .card {
+    width: calc(30% - 15px); /* Adjust width for most purchased */
+}
+
+.most-purchased .card img {
+    width: 100%;
+    height: 300px; /* Increased height for better display */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.wishlist, .cart {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.wishlist:hover, .cart:hover {
+    background-color: #444;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* You can adjust this height as needed */
+    overflow: hidden;
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+}
+
+.banner-slide {
+    display: none;
+    width: 100%;
+    height: 100%; /* Ensure the slide takes the full height */
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-slide img {
+    width: 100%; /* Make the image fill the width */
+    height: 100%; /* Make the image fill the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+}
+
+
+section {
+    margin-bottom: 50px; /* Add spacing between sections */
+}
+
+.brands-row, .categories-row, .indian-wear .cards, .most-purchased .cards {
+    margin-bottom: 30px; /* Additional spacing for card rows if needed */
+}
+
+.categories-row .card {
+    margin: 0 20px; /* Increase left and right margin to 20px */
+    width: calc(20% - 40px); /* Adjust width to accommodate the new margin */
+}
+
+.brands-row .card{
+    margin: 0 25px; /* Increase left and right margin to 20px */
+    width: calc(20% - 50px);
+}
+h2 {
+    color: #000;
+    margin-top: 20px;
+    padding-left: 40px; /* Add right padding to headings */
+    font-size: 35px; /* Increase font size */
+}
+
+
+
+
+
+
+
+
+
+.brand-card {
+    position: relative; /* Ensure positioning for overlay */
+    overflow: hidden; /* Hide overflow */
+}
+
+.brand-card img {
+    width: 100%; /* Ensure images fill the card */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add transition for image effect */
+}
+
+.brand-card:hover img {
+    transform: scale(1.1); /* Slightly scale the image on hover */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay with transparency */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+.brand-card:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+.overlay h3 {
+    color: #fff; /* White text color */
+    font-size: 18px; /* Adjust font size as needed */
+}
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* or whatever height you prefer */
+    overflow: hidden;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+.banner-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%; /* Ensures the image covers the entire banner area */
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
+}
+
+
+
+
+.most-purchased .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Keeps cards spaced evenly */
+    gap: 25px;
+     /* Adjust this value for desired spacing */
+}
+.most-purchased .card {
+    width: calc(25% - 15px); /* Further reduced width for a more compact look */
+}
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0; /* Top and bottom padding */
+    margin: 0; /* Remove any default margin */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 20px; /* Optional: Add padding inside for spacing */
+    margin: 0; /* Ensure no margin */
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Ensures each section has a minimum width */
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+    margin: 0; /* Remove any margin */
+}
+
+/* Additional rule to ensure no margin or padding at the bottom of the footer */
+body {
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+.social-icons {
+    display: flex;
+    justify-content: start; /* Align icons to the start */
+}
+
+.social-icons a {
+    color: #fff; /* Icon color */
+    margin-right: 15px; /* Spacing between icons */
+    font-size: 20px; /* Icon size */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icons a:hover {
+    color: #f10fde; /* Change color on hover */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin-top: 10px; /* Optional: Add space above the icons */
+}
+
+.social-icons a {
+    color: #fff; /* Icon color */
+    margin-right: 15px; /* Spacing between icons */
+    font-size: 20px; /* Icon size */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icons a:last-child {
+    margin-right: 0; /* Remove right margin from the last icon */
+}
+
+p{
+    margin-left: 30px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1); /* Slight zoom on image */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Additional styling for text inside overlay */
+.overlay h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
