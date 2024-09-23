@@ -873,7 +873,14 @@ img {
    color:#fff;
 }
 
-}
+
+.social-icon {
+        margin: 0 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em; /* Adjust this size as needed */
+    }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .feature-boxes {
