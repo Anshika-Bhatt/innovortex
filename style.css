@@ -884,4 +884,47 @@ img {
         margin: 10px 0; /* Spacing for stacked boxes */
     }
 }
+.footer {
+    background-color: #2a3b35;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ae72cf;
+    padding-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ae72cf; /* Change to highlight color on hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
 
