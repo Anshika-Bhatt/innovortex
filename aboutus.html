@@ -6,6 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>About Us - Vashundhra Beauty Collection</title>
     <link rel="stylesheet" href="aboutus.css" />
+    <style>
+      /* Card CSS */
+      .cards {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+        padding: 0 5%;
+      }
+      .card {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 30%;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+      }
+      .card h3 {
+        font-size: 24px;
+        color: #6a5acd;
+        margin-bottom: 15px;
+      }
+      .card p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+      }
+    </style>
   </head>
   <body>
     <section class="about-us">
@@ -27,6 +58,22 @@
             <a href="#" class="hire">Join Us</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards">
+      <div class="card">
+        <h3>Mission</h3>
+        <p>Our mission is to make beauty, fashion, and lifestyle products accessible to everyone. We aim to inspire confidence through our diverse range of products that cater to individual tastes and preferences.</p>
+      </div>
+      <div class="card">
+        <h3>Services</h3>
+        <p>From clothing and accessories to beauty products and home essentials, VBC offers an extensive range of quality items. Our services ensure a seamless shopping experience for all customers, both online and in-store.</p>
+      </div>
+      <div class="card">
+        <h3>Customer Service Policies</h3>
+        <p>We prioritize customer satisfaction. Our policies focus on providing a smooth shopping experience, from fast shipping to easy returns and 24/7 customer support for any inquiries.</p>
       </div>
     </section>
   </body>
