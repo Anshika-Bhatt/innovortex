@@ -872,11 +872,6 @@ img {
    background: #444;
    color:#fff;
 }
-@media (max-width:768px){
-
-   .products-preview .preview img{
-      height: 25rem;
-   }
 
 }
 /* Responsive Styles */
