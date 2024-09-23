@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 40px 0;
+  background: #f5f0f0;
+}
+
+.about {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: url('8000.png') no-repeat center center/cover; /* Background image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  
+.pic {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s;
+}
+
+.pic:hover {
+  transform: scale(1.05);
+}
+
+.text {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.text h2 {
+  color: #333;
+  font-size: 48px; /* Adjusted font size */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.text h5 {
+  color: #ae72cf; /* Updated color for branding */
+  font-size: 24px; /* Adjusted font size */
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.text p {
+  color: #333;
+  font-size: 16px; /* Adjusted font size */
+  line-height: 1.6; /* Increased line height for readability */
+  margin-bottom: 15px;
+}
+
+.data {
+  margin-top: 20px;
+}
+
+.hire {
+  font-size: 18px;
+  background: #ae72cf; /* Updated color for branding */
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hire:hover {
+  background: #9a5ba5; /* Slightly darker shade for hover effect */
+  transform: translateY(-2px); /* Subtle lift effect */
+}
