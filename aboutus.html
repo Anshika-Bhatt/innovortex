@@ -36,6 +36,55 @@
         color: #555;
         line-height: 1.5;
       }
+
+      /* Address Section CSS */
+      .address-section {
+        background-color: #f4f0fa;
+        padding: 40px;
+        text-align: center;
+      }
+      .address-section h2 {
+        color: #6a5acd;
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+      .address {
+        background: #e6e6fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: #333;
+        display: inline-block;
+      }
+      .map-container {
+        margin-top: 20px;
+      }
+      .map-container iframe {
+        border: 0;
+        width: 80%;
+        height: 400px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .directions {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      .directions ul {
+        list-style: none;
+        padding: 0;
+      }
+      .directions ul li {
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 8px;
+        margin: 10px 0;
+        transition: background 0.3s;
+      }
+      .directions ul li:hover {
+        background: #e2e6ea;
+      }
     </style>
   </head>
   <body>
@@ -76,5 +125,39 @@
         <p>We prioritize customer satisfaction. Our policies focus on providing a smooth shopping experience, from fast shipping to easy returns and 24/7 customer support for any inquiries.</p>
       </div>
     </section>
+
+    <!-- Address Section -->
+    <section class="address-section">
+      <h2>Our Address</h2>
+      <div class="address">
+        VBC Headquarters<br />
+        Indira Gandhi Delhi Technical University for Women<br />
+        15, Sukhdev Vihar, Delhi, 110044<br />
+        India
+      </div>
+      
+      <div class="map-container">
+        <h2>Find Us on the Map</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.2982065517043!2d77.2376863150864!3d28.55041918247861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd225e7b7281%3A0xf71bb9dbf50b98a9!2sIndira%20Gandhi%20Delhi%20Technical%20University%20for%20Women!5e0!3m2!1sen!2sus!4v1634189067716!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+
+      <div class="directions">
+        <h2>Getting Here</h2>
+        <p>For directions, use the map above or:</p>
+        <ul>
+          <li><strong>By Car:</strong> Take the Main Road and follow the signs to IGDTUW.</li>
+          <li><strong>By Public Transport:</strong> Take the Delhi Metro to the nearest station and take a bus or auto-rickshaw.</li>
+          <li><strong>By Bicycle:</strong> There are bike racks available at our entrance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2024 VBC. All rights reserved.
+    </footer>
   </body>
 </html>
